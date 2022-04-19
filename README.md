@@ -1,4 +1,4 @@
-# novoline-skidded
+# novoline
 
 This is a skidded version of Novoline Client's website.
 
