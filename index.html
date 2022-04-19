@@ -1,0 +1,1940 @@
+<!-- Create a simple website using CSS -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="description" content="Novoline Utility Mod Website">
+    <meta name="keywords" content="novoline, utility mod, novoline client">
+    <meta name="viewport" content="width=device-width, user-scalable=no">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="apple-touch-icon" sizes="180x180" href="/static/icon/apple-touch-icon-ae48d951ac79ace029bfe1b2da788d41.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/static/icon/favicon-32x32-c3b5c691ebb1cf8e12e98bc8f7ee7e24.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/static/icon/favicon-16x16-3b017cee9ffd54b60f365baf6e1649b3.png">
+    <link rel="manifest" href="/static/icon/site-053100cb84a50d2ae7f5492f7dd7f25e.webmanifest">
+    <link rel="stylesheet" href="/css/shared-498fd915829119c2f4f6904e2e5904e3.css">
+    <link rel="stylesheet" href="/css/adaptive-0f40827e06c7ffe78f015c9d508d576d.css">
+    <link rel="stylesheet" href="/css/landing-698a4ddc28dfd4e240a27dffcea95a4e.css">
+    <link rel="stylesheet" href="/css/novogui-05974f01901e40fef4f123dcae05edc1.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script type="text/javascript"></script>
+    <script src="//cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="novogui-ca5f15e52db4021d916a4759552b0909.js" async=""
+        defer=""></script>
+    
+    <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-5HEPXW3GJX"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-5HEPXW3GJX');
+    </script>
+    <title>Tentacle</title>
+</head>
+<body>
+    <div class="clickgui">
+        <div id="combat-tab" class="panel">
+            <div class="panel-header"><span class="panel-title">Combat</span><img class="panel-icon" loading="lazy"
+                    src="/static/novogui/icons/combat.png"></div>
+            <div class="panel-elements">
+                <div id="AntiBot-module" class="module">
+                    <div class="module-header"><span class="module-title">AntiBot</span></div>
+                    <div class="module-settings-wrapper"></div>
+                </div>
+                <div id="AutoPotion-module" class="module">
+                    <div class="module-header"><span class="module-title">AutoPotion</span><span
+                            class="module-expand">v</span></div>
+                    <div class="module-settings-wrapper">
+                        <div class="module-settings">
+                            <div class="setting slider-setting" id="HEARTS"><input type="range" class="display-slider"
+                                    min="0.5" max="20" step="0.5" value="0.5" disabled=""><input type="range"
+                                    class="real-slider" min="0.5" max="20" step="0.5" value="0.5">
+                                <div class="slider-value-holder"><span class="setting-title">Health</span><span
+                                        class="slider-value">0.5</span></div>
+                            </div>
+                            <div class="setting slider-setting" id="DELAY"><input type="range" class="display-slider"
+                                    min="500" max="2500" step="100" value="500" disabled=""><input type="range"
+                                    class="real-slider" min="500" max="2500" step="100" value="500">
+                                <div class="slider-value-holder"><span class="setting-title">Throw Delay</span><span
+                                        class="slider-value">500</span></div>
+                            </div>
+                            <div class="setting combobox-setting" id="AP_POTIONS">
+                                <div class="combobox-wrapper"><span class="combobox-title">Potions</span></div>
+                                <ul class="combobox-items collapsed-combobox">
+                                    <li>Heal</li>
+                                    <li>Regen</li>
+                                    <li>Jump</li>
+                                    <li>Speed</li>
+                                    <li>Fire</li>
+                                    <li>Resist</li>
+                                </ul>
+                            </div>
+                            <div id="OVERLAP" class="setting checkbox-setting"><span class="setting-title">Overlap</span>
+                                <div class="checkbox-value"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="KillAura-module" class="module">
+                    <div class="module-header"><span class="module-title">KillAura</span><span
+                            class="module-expand">v</span></div>
+                    <div class="module-settings-wrapper">
+                        <div class="module-settings">
+                            <div id="AURA_MODE" class="setting selectbox-setting"><span
+                                    class="setting-title">Mode</span><span class="selectbox-value">Switch</span></div>
+                            <div id="SORT" class="setting selectbox-setting setting-disabled"><span
+                                    class="setting-title">Sort by</span><span class="selectbox-value">Distance</span></div>
+                            <div class="setting slider-setting" id="SWITCH_DELAY"><input type="range" class="display-slider"
+                                    min="50" max="1000" step="50" value="50" disabled=""><input type="range"
+                                    class="real-slider" min="50" max="1000" step="50" value="50">
+                                <div class="slider-value-holder"><span class="setting-title">Switch Delay</span><span
+                                        class="slider-value">50</span></div>
+                            </div>
+                            <div class="setting slider-setting" id="APS"><input type="range" class="display-slider" min="1"
+                                    max="18" step="1" value="1" disabled=""><input type="range" class="real-slider" min="1"
+                                    max="18" step="1" value="1">
+                                <div class="slider-value-holder"><span class="setting-title">APS</span><span
+                                        class="slider-value">1</span></div>
+                            </div>
+                            <div class="setting slider-setting" id="RANGE"><input type="range" class="display-slider"
+                                    min="1" max="7" step="0.1" value="1" disabled=""><input type="range" class="real-slider"
+                                    min="1" max="7" step="0.1" value="1">
+                                <div class="slider-value-holder"><span class="setting-title">Range</span><span
+                                        class="slider-value">1</span></div>
+                            </div>
+                            <div class="setting slider-setting" id="BLOCK_RANGE"><input type="range" class="display-slider"
+                                    min="1" max="10" step="0.1" value="1" disabled=""><input type="range"
+                                    class="real-slider" min="1" max="10" step="0.1" value="1">
+                                <div class="slider-value-holder"><span class="setting-title">Block Range</span><span
+                                        class="slider-value">1</span></div>
+                            </div>
+                            <div class="setting slider-setting" id="WALL_RANGE"><input type="range" class="display-slider"
+                                    min="1" max="7" step="0.1" value="1" disabled=""><input type="range" class="real-slider"
+                                    min="1" max="7" step="0.1" value="1">
+                                <div class="slider-value-holder"><span class="setting-title">Wall Range</span><span
+                                        class="slider-value">1</span></div>
+                            </div>
+                            <div class="setting slider-setting" id="AURA_FOV"><input type="range" class="display-slider"
+                                    min="1" max="180" step="1" value="1" disabled=""><input type="range" class="real-slider"
+                                    min="1" max="180" step="1" value="1">
+                                <div class="slider-value-holder"><span class="setting-title">FOV Check</span><span
+                                        class="slider-value">1</span></div>
+                            </div>
+                            <div class="setting slider-setting" id="AURA_ASM"><input type="range" class="display-slider"
+                                    min="1" max="100" step="5" value="1" disabled=""><input type="range" class="real-slider"
+                                    min="1" max="100" step="5" value="1">
+                                <div class="slider-value-holder"><span class="setting-title">Angle Smoothing</span><span
+                                        class="slider-value">1</span></div>
+                            </div>
+                            <div class="setting combobox-setting" id="TARGETS">
+                                <div class="combobox-wrapper"><span class="combobox-title">Targets</span></div>
+                                <ul class="combobox-items collapsed-combobox">
+                                    <li>Players</li>
+                                    <li>Animals</li>
+                                    <li>Mobs</li>
+                                    <li>Invisibles</li>
+                                </ul>
+                            </div>
+                            <div class="setting combobox-setting" id="KA_FILTER">
+                                <div class="combobox-wrapper"><span class="combobox-title">Filters</span></div>
+                                <ul class="combobox-items collapsed-combobox">
+                                    <li>Teams</li>
+                                    <li>Users</li>
+                                    <li>Armor</li>
+                                </ul>
+                            </div>
+                            <div class="setting combobox-setting" id="KA_PARTICLES">
+                                <div class="combobox-wrapper"><span class="combobox-title">Particles</span></div>
+                                <ul class="combobox-items collapsed-combobox">
+                                    <li>Enchant</li>
+                                    <li>Critical</li>
+                                </ul>
+                            </div>
+                            <div id="KA_RAY_TRACE" class="setting checkbox-setting"><span class="setting-title">Ray
+                                    Trace</span>
+                                <div class="checkbox-value"></div>
+                            </div>
+                            <div id="KA_NO_SWING" class="setting checkbox-setting"><span class="setting-title">No
+                                    swing</span>
+                                <div class="checkbox-value"></div>
+                            </div>
+                            <div id="BLINK" class="setting checkbox-setting"><span class="setting-title">Lag</span>
+                                <div class="checkbox-value"></div>
+                            </div>
+                            <div id="AUTOBLOCK" class="setting checkbox-setting"><span
+                                    class="setting-title">AutoBlock</span>
+                                <div class="checkbox-value"></div>
+                            </div>
+                            <div id="TAR_HUD" class="setting checkbox-setting"><span class="setting-title">Target HUD</span>
+                                <div class="checkbox-value"></div>
+                            </div>
+                            <div class="setting combobox-setting" id="KADISABLE">
+                                <div class="combobox-wrapper"><span class="combobox-title">Disable On</span></div>
+                                <ul class="combobox-items collapsed-combobox">
+                                    <li>World Change</li>
+                                    <li>Game End</li>
+                                    <li>Death</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="Criticals-module" class="module">
+                    <div class="module-header"><span class="module-title">Criticals</span></div>
+                    <div class="module-settings-wrapper"></div>
+                </div>
+                <div id="Reach-module" class="module">
+                    <div class="module-header"><span class="module-title">Reach</span><span class="module-expand">v</span>
+                    </div>
+                    <div class="module-settings-wrapper">
+                        <div class="module-settings">
+                            <div class="setting slider-setting" id="Reach_Distance"><input type="range"
+                                    class="display-slider" min="3" max="6" step="0.1" value="3" disabled=""><input
+                                    type="range" class="real-slider" min="3" max="6" step="0.1" value="3">
+                                <div class="slider-value-holder"><span class="setting-title">Range</span><span
+                                        class="slider-value">3</span></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="AutoHead-module" class="module">
+                    <div class="module-header"><span class="module-title">AutoHead</span><span
+                            class="module-expand">v</span></div>
+                    <div class="module-settings-wrapper">
+                        <div class="module-settings">
+                            <div class="setting slider-setting" id="Health"><input type="range" class="display-slider"
+                                    min="1" max="20" step="1" value="1" disabled=""><input type="range" class="real-slider"
+                                    min="1" max="20" step="1" value="1">
+                                <div class="slider-value-holder"><span class="setting-title">Health</span><span
+                                        class="slider-value">1</span></div>
+                            </div>
+                            <div id="FORCE_ABS" class="setting checkbox-setting"><span class="setting-title">Force
+                                    absorption</span>
+                                <div class="checkbox-value"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="Velocity-module" class="module">
+                    <div class="module-header"><span class="module-title">Velocity</span><span
+                            class="module-expand">v</span></div>
+                    <div class="module-settings-wrapper">
+                        <div class="module-settings">
+                            <div id="ALERTS" class="setting checkbox-setting"><span class="setting-title">Alerts</span>
+                                <div class="checkbox-value"></div>
+                            </div>
+                            <div class="setting slider-setting" id="VEL_HOR"><input type="range" class="display-slider"
+                                    min="0" max="100" step="5" value="0" disabled=""><input type="range" class="real-slider"
+                                    min="0" max="100" step="5" value="0">
+                                <div class="slider-value-holder"><span class="setting-title">Horizontal</span><span
+                                        class="slider-value">0</span></div>
+                            </div>
+                            <div class="setting slider-setting" id="VEL_VER"><input type="range" class="display-slider"
+                                    min="0" max="100" step="5" value="0" disabled=""><input type="range" class="real-slider"
+                                    min="0" max="100" step="5" value="0">
+                                <div class="slider-value-holder"><span class="setting-title">Vertical</span><span
+                                        class="slider-value">0</span></div>
+                            </div>
+                            <div class="setting slider-setting" id="VEL_CHANCE"><input type="range" class="display-slider"
+                                    min="0" max="100" step="5" value="0" disabled=""><input type="range" class="real-slider"
+                                    min="0" max="100" step="5" value="0">
+                                <div class="slider-value-holder"><span class="setting-title">Chance</span><span
+                                        class="slider-value">0</span></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="AutoClicker-module" class="module">
+                    <div class="module-header"><span class="module-title">AutoClicker</span><span
+                            class="module-expand">v</span></div>
+                    <div class="module-settings-wrapper">
+                        <div class="module-settings">
+                            <div class="setting slider-setting" id="MINRAND"><input type="range" class="display-slider"
+                                    min="1" max="20" step="1" value="1" disabled=""><input type="range" class="real-slider"
+                                    min="1" max="20" step="1" value="1">
+                                <div class="slider-value-holder"><span class="setting-title">Min CPS</span><span
+                                        class="slider-value">1</span></div>
+                            </div>
+                            <div class="setting slider-setting" id="MAXRAND"><input type="range" class="display-slider"
+                                    min="1" max="20" step="1" value="1" disabled=""><input type="range" class="real-slider"
+                                    min="1" max="20" step="1" value="1">
+                                <div class="slider-value-holder"><span class="setting-title">Max CPS</span><span
+                                        class="slider-value">1</span></div>
+                            </div>
+                            <div id="ON_MOUSE" class="setting checkbox-setting"><span class="setting-title">On Attack
+                                    Key</span>
+                                <div class="checkbox-value"></div>
+                            </div>
+                            <div id="BLOCK_HIT" class="setting checkbox-setting"><span class="setting-title">Block
+                                    Hit</span>
+                                <div class="checkbox-value"></div>
+                            </div>
+                            <div id="DESTROY_BLOCKS" class="setting checkbox-setting"><span class="setting-title">Destroy
+                                    Blocks</span>
+                                <div class="checkbox-value"></div>
+                            </div>
+                            <div id="ONLY_SWORDAXE" class="setting checkbox-setting"><span class="setting-title">Only
+                                    Swords/Axes</span>
+                                <div class="checkbox-value"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="AimAssist-module" class="module">
+                    <div class="module-header"><span class="module-title">AimAssist</span><span
+                            class="module-expand">v</span></div>
+                    <div class="module-settings-wrapper">
+                        <div class="module-settings">
+                            <div class="setting slider-setting" id="REACH"><input type="range" class="display-slider"
+                                    min="1" max="6" step="0.1" value="1" disabled=""><input type="range" class="real-slider"
+                                    min="1" max="6" step="0.1" value="1">
+                                <div class="slider-value-holder"><span class="setting-title">Reach</span><span
+                                        class="slider-value">1</span></div>
+                            </div>
+                            <div class="setting slider-setting" id="AIM_DELAY"><input type="range" class="display-slider"
+                                    min="0" max="1000" step="50" value="0" disabled=""><input type="range"
+                                    class="real-slider" min="0" max="1000" step="50" value="0">
+                                <div class="slider-value-holder"><span class="setting-title">Aim Delay</span><span
+                                        class="slider-value">0</span></div>
+                            </div>
+                            <div class="setting slider-setting" id="HEIGHT"><input type="range" class="display-slider"
+                                    min="-8" max="8" step="1" value="-8" disabled=""><input type="range" class="real-slider"
+                                    min="-8" max="8" step="1" value="-8">
+                                <div class="slider-value-holder"><span class="setting-title">Height</span><span
+                                        class="slider-value">-8</span></div>
+                            </div>
+                            <div class="setting slider-setting" id="H_LEFT"><input type="range" class="display-slider"
+                                    min="0" max="5" step="0.1" value="0" disabled=""><input type="range" class="real-slider"
+                                    min="0" max="5" step="0.1" value="0">
+                                <div class="slider-value-holder"><span class="setting-title">Horizontal Left</span><span
+                                        class="slider-value">0</span></div>
+                            </div>
+                            <div class="setting slider-setting" id="H_RIGHT"><input type="range" class="display-slider"
+                                    min="0" max="5" step="0.1" value="0" disabled=""><input type="range" class="real-slider"
+                                    min="0" max="5" step="0.1" value="0">
+                                <div class="slider-value-holder"><span class="setting-title">Horizontal Right</span><span
+                                        class="slider-value">0</span></div>
+                            </div>
+                            <div class="setting slider-setting" id="V_UP"><input type="range" class="display-slider" min="0"
+                                    max="5" step="0.1" value="0" disabled=""><input type="range" class="real-slider" min="0"
+                                    max="5" step="0.1" value="0">
+                                <div class="slider-value-holder"><span class="setting-title">Vertical Up</span><span
+                                        class="slider-value">0</span></div>
+                            </div>
+                            <div class="setting slider-setting" id="V_DOWN"><input type="range" class="display-slider"
+                                    min="0" max="5" step="0.1" value="0" disabled=""><input type="range" class="real-slider"
+                                    min="0" max="5" step="0.1" value="0">
+                                <div class="slider-value-holder"><span class="setting-title">Vertical Down</span><span
+                                        class="slider-value">0</span></div>
+                            </div>
+                            <div id="ONLY_AXESWORD" class="setting checkbox-setting"><span class="setting-title">Only
+                                    Sword/Axe</span>
+                                <div class="checkbox-value"></div>
+                            </div>
+                            <div id="RAYTRACE" class="setting checkbox-setting"><span class="setting-title">Raytrace</span>
+                                <div class="checkbox-value"></div>
+                            </div>
+                            <div id="CLICKAIM" class="setting checkbox-setting"><span class="setting-title">Click Aim</span>
+                                <div class="checkbox-value"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="HitBox-module" class="module">
+                    <div class="module-header"><span class="module-title">HitBox</span><span class="module-expand">v</span>
+                    </div>
+                    <div class="module-settings-wrapper">
+                        <div class="module-settings">
+                            <div id="REMOVE_BOX" class="setting checkbox-setting"><span class="setting-title">Remove
+                                    Trace</span>
+                                <div class="checkbox-value"></div>
+                            </div>
+                            <div id="MODIFY_BOX" class="setting checkbox-setting"><span class="setting-title">Modify
+                                    Box</span>
+                                <div class="checkbox-value"></div>
+                            </div>
+                            <div class="setting slider-setting setting-disabled" id="ENTITY_BOX"><input type="range"
+                                    class="display-slider" min="0.1" max="1" step="0.1" value="0.1" disabled=""><input
+                                    type="range" class="real-slider" min="0.1" max="1" step="0.1" value="0.1">
+                                <div class="slider-value-holder"><span class="setting-title">Box Size</span><span
+                                        class="slider-value">0.1</span></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="TargetStrafe-module" class="module">
+                    <div class="module-header"><span class="module-title">TargetStrafe</span><span
+                            class="module-expand">v</span></div>
+                    <div class="module-settings-wrapper">
+                        <div class="module-settings">
+                            <div class="setting slider-setting" id="TS_RADIUS"><input type="range" class="display-slider"
+                                    min="0.5" max="4.5" step="0.1" value="0.5" disabled=""><input type="range"
+                                    class="real-slider" min="0.5" max="4.5" step="0.1" value="0.5">
+                                <div class="slider-value-holder"><span class="setting-title">Radius</span><span
+                                        class="slider-value">0.5</span></div>
+                            </div>
+                            <div id="TS_TAR" class="setting checkbox-setting"><span class="setting-title">Only target</span>
+                                <div class="checkbox-value"></div>
+                            </div>
+                            <div id="TS_SPACE" class="setting checkbox-setting"><span class="setting-title">On jump
+                                    key</span>
+                                <div class="checkbox-value"></div>
+                            </div>
+                            <div id="TS_CONTROL" class="setting checkbox-setting"><span
+                                    class="setting-title">Controllable</span>
+                                <div class="checkbox-value"></div>
+                            </div>
+                            <div id="TS_BEHIND" class="setting checkbox-setting"><span class="setting-title">Behind</span>
+                                <div class="checkbox-value"></div>
+                            </div>
+                            <div id="POINTS" class="setting checkbox-setting"><span class="setting-title">Draw circle</span>
+                                <div class="checkbox-value"></div>
+                            </div>
+                            <div class="setting color-setting setting-disabled" id="TS_CIRCLE_COLOR">
+                                <div class="sliders" slider="h"><input type="range" class="color-slider h-slider" min="1"
+                                        max="360" disabled=""><input type="range" class="real-color-slider real-h-slider"
+                                        min="0" max="360" slider="h"><input type="range"
+                                        class="color-slider s-slider disabled-color-slider" min="0" max="100" disabled=""
+                                        style="background-color: rgb(0, 255, 255);"><input type="range"
+                                        class="real-color-slider real-s-slider disabled-color-slider" min="0" max="100"
+                                        slider="s"><input type="range" class="color-slider l-slider disabled-color-slider"
+                                        min="0" max="100" disabled="" style="background-color: rgb(0, 255, 255);"><input
+                                        type="range" class="real-color-slider real-l-slider disabled-color-slider" min="0"
+                                        max="100" slider="l"><span class="setting-title">Circle color</span></div>
+                            </div>
+                            <div class="setting combobox-setting" id="TS_MODS">
+                                <div class="combobox-wrapper"><span class="combobox-title">Support</span></div>
+                                <ul class="combobox-items collapsed-combobox">
+                                    <li>Fly</li>
+                                    <li>Speed</li>
+                                </ul>
+                            </div>
+                            <div id="TS_EDGES" class="setting checkbox-setting"><span class="setting-title">Stop on
+                                    Edges</span>
+                                <div class="checkbox-value"></div>
+                            </div>
+                            <div class="setting slider-setting setting-disabled" id="TS_EDGES_MIN_AMOUNT"><input
+                                    type="range" class="display-slider" min="4" max="10" step="1" value="4"
+                                    disabled=""><input type="range" class="real-slider" min="4" max="10" step="1" value="4">
+                                <div class="slider-value-holder"><span class="setting-title">Maximum Height</span><span
+                                        class="slider-value">4</span></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="movement-tab" class="panel">
+            <div class="panel-header"><span class="panel-title">Movement</span><img class="panel-icon" loading="lazy"
+                    src="/static/novogui/icons/movement.png"></div>
+            <div class="panel-elements">
+                <div id="Sprint-module" class="module">
+                    <div class="module-header"><span class="module-title">Sprint</span></div>
+                    <div class="module-settings-wrapper"></div>
+                </div>
+                <div id="Step-module" class="module">
+                    <div class="module-header"><span class="module-title">Step</span><span class="module-expand">v</span>
+                    </div>
+                    <div class="module-settings-wrapper">
+                        <div class="module-settings">
+                            <div class="setting slider-setting" id="NCP_HEIGHT"><input type="range" class="display-slider"
+                                    min="1" max="2.5" step="0.5" value="1" disabled=""><input type="range"
+                                    class="real-slider" min="1" max="2.5" step="0.5" value="1">
+                                <div class="slider-value-holder"><span class="setting-title">Height</span><span
+                                        class="slider-value">1</span></div>
+                            </div>
+                            <div class="setting slider-setting" id="STEP_TIMER"><input type="range" class="display-slider"
+                                    min="0.1" max="1" step="0.05" value="0.1" disabled=""><input type="range"
+                                    class="real-slider" min="0.1" max="1" step="0.05" value="0.1">
+                                <div class="slider-value-holder"><span class="setting-title">Step Timer</span><span
+                                        class="slider-value">0.1</span></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="WaterWalk-module" class="module">
+                    <div class="module-header"><span class="module-title">WaterWalk</span><span
+                            class="module-expand">v</span></div>
+                    <div class="module-settings-wrapper">
+                        <div class="module-settings">
+                            <div id="WW_MODE" class="setting selectbox-setting"><span class="setting-title">Mode</span><span
+                                    class="selectbox-value">Solid</span></div>
+                        </div>
+                    </div>
+                </div>
+                <div id="NoSlow-module" class="module">
+                    <div class="module-header"><span class="module-title">NoSlow</span><span class="module-expand">v</span>
+                    </div>
+                    <div class="module-settings-wrapper">
+                        <div class="module-settings">
+                            <div id="NS_VANILLA" class="setting checkbox-setting"><span class="setting-title">Vanilla</span>
+                                <div class="checkbox-value"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="Speed-module" class="module">
+                    <div class="module-header"><span class="module-title">Speed</span><span class="module-expand">v</span>
+                    </div>
+                    <div class="module-settings-wrapper">
+                        <div class="module-settings">
+                            <div id="SPEED_MODE" class="setting selectbox-setting"><span
+                                    class="setting-title">Mode</span><span class="selectbox-value">Hypixel</span></div>
+                            <div id="SPEED_ICE_BOOST" class="setting checkbox-setting"><span class="setting-title">Ice
+                                    Boost</span>
+                                <div class="checkbox-value"></div>
+                            </div>
+                            <div id="SPEED_LAG_CHECK" class="setting checkbox-setting"><span class="setting-title">Lagback
+                                    check</span>
+                                <div class="checkbox-value"></div>
+                            </div>
+                            <div id="SPEED_PREDICTION" class="setting checkbox-setting setting-disabled"><span
+                                    class="setting-title">Prediction</span>
+                                <div class="checkbox-value"></div>
+                            </div>
+                            <div id="SPEED_CRITS" class="setting checkbox-setting"><span class="setting-title">Crits</span>
+                                <div class="checkbox-value"></div>
+                            </div>
+                            <div id="SPEED_FAST_ATTACK" class="setting checkbox-setting"><span class="setting-title">Fast
+                                    Attack</span>
+                                <div class="checkbox-value"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="Scaffold-module" class="module">
+                    <div class="module-header"><span class="module-title">Scaffold</span><span
+                            class="module-expand">v</span></div>
+                    <div class="module-settings-wrapper">
+                        <div class="module-settings">
+                            <div class="setting combobox-setting" id="SCAFF_ADDONS">
+                                <div class="combobox-wrapper"><span class="combobox-title">Addons</span></div>
+                                <ul class="combobox-items collapsed-combobox">
+                                    <li>Downwards</li>
+                                    <li>SwingItem</li>
+                                    <li>Swapper</li>
+                                    <li>Slowdown</li>
+                                    <li>Silent</li>
+                                </ul>
+                            </div>
+                            <div id="Jump_Mode" class="setting selectbox-setting"><span
+                                    class="setting-title">Mode</span><span class="selectbox-value">StairsJump</span></div>
+                            <div class="setting slider-setting" id="SCAFF_SLOT"><input type="range" class="display-slider"
+                                    min="1" max="9" step="1" value="1" disabled=""><input type="range" class="real-slider"
+                                    min="1" max="9" step="1" value="1">
+                                <div class="slider-value-holder"><span class="setting-title">Swap Slot</span><span
+                                        class="slider-value">1</span></div>
+                            </div>
+                            <div class="setting slider-setting" id="EXP_DIST"><input type="range" class="display-slider"
+                                    min="1" max="1.5" step="0.1" value="1" disabled=""><input type="range"
+                                    class="real-slider" min="1" max="1.5" step="0.1" value="1">
+                                <div class="slider-value-holder"><span class="setting-title">Expand</span><span
+                                        class="slider-value">1</span></div>
+                            </div>
+                            <div class="setting slider-setting" id="TOWER_BOOST"><input type="range" class="display-slider"
+                                    min="1" max="2" step="0.1" value="1" disabled=""><input type="range" class="real-slider"
+                                    min="1" max="2" step="0.1" value="1">
+                                <div class="slider-value-holder"><span class="setting-title">Tower Boost</span><span
+                                        class="slider-value">1</span></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="LongJump-module" class="module">
+                    <div class="module-header"><span class="module-title">LongJump</span><span
+                            class="module-expand">v</span></div>
+                    <div class="module-settings-wrapper">
+                        <div class="module-settings">
+                            <div class="setting slider-setting" id="LJ_BOOST"><input type="range" class="display-slider"
+                                    min="1" max="4" step="0.1" value="1" disabled=""><input type="range" class="real-slider"
+                                    min="1" max="4" step="0.1" value="1">
+                                <div class="slider-value-holder"><span class="setting-title">Boost</span><span
+                                        class="slider-value">1</span></div>
+                            </div>
+                            <div id="LJ_DISABLE" class="setting checkbox-setting"><span class="setting-title">Auto
+                                    disable</span>
+                                <div class="checkbox-value"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="Flight-module" class="module">
+                    <div class="module-header"><span class="module-title">Flight</span><span class="module-expand">v</span>
+                    </div>
+                    <div class="module-settings-wrapper">
+                        <div class="module-settings">
+                            <div id="FLIGHT_HYPIXEL_MODE" class="setting selectbox-setting"><span
+                                    class="setting-title">Hypixel Mode</span><span class="selectbox-value">Normal</span>
+                            </div>
+                            <div id="FLIGHT_TRIGGER" class="setting selectbox-setting"><span class="setting-title">Timer
+                                    Trigger</span><span class="selectbox-value">Toggle</span></div>
+                            <div id="FLIGHT_PEARL" class="setting checkbox-setting"><span class="setting-title">Pearl
+                                    Boost</span>
+                                <div class="checkbox-value"></div>
+                            </div>
+                            <div id="FLIGHT_SW_BOOST" class="setting checkbox-setting"><span class="setting-title">Skywars
+                                    Boost</span>
+                                <div class="checkbox-value"></div>
+                            </div>
+                            <div class="setting slider-setting" id="FLIGHT_SPEED"><input type="range" class="display-slider"
+                                    min="1" max="16" step="0.1" value="1" disabled=""><input type="range"
+                                    class="real-slider" min="1" max="16" step="0.1" value="1">
+                                <div class="slider-value-holder"><span class="setting-title">Speed</span><span
+                                        class="slider-value">1</span></div>
+                            </div>
+                            <div class="setting slider-setting" id="FLIGHT_TIMER_SPEED"><input type="range"
+                                    class="display-slider" min="1" max="5" step="0.1" value="1" disabled=""><input
+                                    type="range" class="real-slider" min="1" max="5" step="0.1" value="1">
+                                <div class="slider-value-holder"><span class="setting-title">Timer Speed</span><span
+                                        class="slider-value">1</span></div>
+                            </div>
+                            <div class="setting slider-setting setting-disabled" id="FLIGHT_TIMER_DELAY"><input type="range"
+                                    class="display-slider" min="50" max="2000" step="5" value="50" disabled=""><input
+                                    type="range" class="real-slider" min="50" max="2000" step="5" value="50">
+                                <div class="slider-value-holder"><span class="setting-title">Timer Duration</span><span
+                                        class="slider-value">50</span></div>
+                            </div>
+                            <div class="setting slider-setting" id="FLIGHT_VIEW_BOBBING"><input type="range"
+                                    class="display-slider" min="0" max="100" step="5" value="0" disabled=""><input
+                                    type="range" class="real-slider" min="0" max="100" step="5" value="0">
+                                <div class="slider-value-holder"><span class="setting-title">View Bobbing</span><span
+                                        class="slider-value">0</span></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="Freecam-module" class="module">
+                    <div class="module-header"><span class="module-title">Freecam</span><span class="module-expand">v</span>
+                    </div>
+                    <div class="module-settings-wrapper">
+                        <div class="module-settings">
+                            <div class="setting slider-setting" id="FC_SPEED"><input type="range" class="display-slider"
+                                    min="1" max="5" step="1" value="1" disabled=""><input type="range" class="real-slider"
+                                    min="1" max="5" step="1" value="1">
+                                <div class="slider-value-holder"><span class="setting-title">Speed</span><span
+                                        class="slider-value">1</span></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="FastSneak-module" class="module">
+                    <div class="module-header"><span class="module-title">FastSneak</span></div>
+                    <div class="module-settings-wrapper"></div>
+                </div>
+            </div>
+        </div>
+        <div id="player-tab" class="panel">
+            <div class="panel-header"><span class="panel-title">Player</span><img class="panel-icon" loading="lazy"
+                    src="/static/novogui/icons/player.png"></div>
+            <div class="panel-elements">
+                <div id="NoRotate-module" class="module">
+                    <div class="module-header"><span class="module-title">NoRotate</span><span
+                            class="module-expand">v</span></div>
+                    <div class="module-settings-wrapper">
+                        <div class="module-settings">
+                            <div id="GROUND_CHECK" class="setting checkbox-setting"><span class="setting-title">On
+                                    Ground</span>
+                                <div class="checkbox-value"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="SpeedMine-module" class="module">
+                    <div class="module-header"><span class="module-title">SpeedMine</span></div>
+                    <div class="module-settings-wrapper"></div>
+                </div>
+                <div id="ChestStealer-module" class="module">
+                    <div class="module-header"><span class="module-title">ChestStealer</span><span
+                            class="module-expand">v</span></div>
+                    <div class="module-settings-wrapper">
+                        <div class="module-settings">
+                            <div class="setting slider-setting" id="CS_DELAY"><input type="range" class="display-slider"
+                                    min="50" max="150" step="5" value="50" disabled=""><input type="range"
+                                    class="real-slider" min="50" max="150" step="5" value="50">
+                                <div class="slider-value-holder"><span class="setting-title">Delay</span><span
+                                        class="slider-value">50</span></div>
+                            </div>
+                            <div id="CS_CLOSE" class="setting checkbox-setting"><span class="setting-title">Close</span>
+                                <div class="checkbox-value"></div>
+                            </div>
+                            <div id="CS_IGNORE" class="setting checkbox-setting"><span class="setting-title">Ignore</span>
+                                <div class="checkbox-value"></div>
+                            </div>
+                            <div id="CS_SILENT" class="setting checkbox-setting"><span class="setting-title">Silent</span>
+                                <div class="checkbox-value"></div>
+                            </div>
+                            <div id="CS_AURA" class="setting checkbox-setting"><span class="setting-title">Aura</span>
+                                <div class="checkbox-value"></div>
+                            </div>
+                            <div class="setting slider-setting setting-disabled" id="CS_AURA_RANGE"><input type="range"
+                                    class="display-slider" min="1" max="4" step="0.1" value="1" disabled=""><input
+                                    type="range" class="real-slider" min="1" max="4" step="0.1" value="1">
+                                <div class="slider-value-holder"><span class="setting-title">Aura Range</span><span
+                                        class="slider-value">1</span></div>
+                            </div>
+                            <div class="setting combobox-setting" id="CS_AUTO_DISABLE">
+                                <div class="combobox-wrapper"><span class="combobox-title">Disable On</span></div>
+                                <ul class="combobox-items collapsed-combobox">
+                                    <li>World Change</li>
+                                    <li>Game End</li>
+                                    <li>Death</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="AutoArmor-module" class="module">
+                    <div class="module-header"><span class="module-title">AutoArmor</span><span
+                            class="module-expand">v</span></div>
+                    <div class="module-settings-wrapper">
+                        <div class="module-settings">
+                            <div class="setting slider-setting" id="Equip_Delay"><input type="range" class="display-slider"
+                                    min="1" max="10" step="1" value="1" disabled=""><input type="range" class="real-slider"
+                                    min="1" max="10" step="1" value="1">
+                                <div class="slider-value-holder"><span class="setting-title">Delay</span><span
+                                        class="slider-value">1</span></div>
+                            </div>
+                            <div id="AA_OPEN_INV" class="setting checkbox-setting"><span class="setting-title">Open
+                                    Inventory</span>
+                                <div class="checkbox-value"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="InventoryManager-module" class="module">
+                    <div class="module-header"><span class="module-title">InventoryManager</span><span
+                            class="module-expand">v</span></div>
+                    <div class="module-settings-wrapper">
+                        <div class="module-settings">
+                            <div id="IM_CLEANER" class="setting checkbox-setting"><span class="setting-title">Cleaner</span>
+                                <div class="checkbox-value"></div>
+                            </div>
+                            <div id="IM_OPEN_INV" class="setting checkbox-setting"><span class="setting-title">Open
+                                    Inventory</span>
+                                <div class="checkbox-value"></div>
+                            </div>
+                            <div class="setting slider-setting setting-disabled" id="IM_DELAY"><input type="range"
+                                    class="display-slider" min="1" max="10" step="1" value="1" disabled=""><input
+                                    type="range" class="real-slider" min="1" max="10" step="1" value="1">
+                                <div class="slider-value-holder"><span class="setting-title">Delay</span><span
+                                        class="slider-value">1</span></div>
+                            </div>
+                            <div class="setting slider-setting setting-disabled" id="IM_BLOCKS"><input type="range"
+                                    class="display-slider" min="0" max="512" step="64" value="0" disabled=""><input
+                                    type="range" class="real-slider" min="0" max="512" step="64" value="0">
+                                <div class="slider-value-holder"><span class="setting-title">Blocks</span><span
+                                        class="slider-value">0</span></div>
+                            </div>
+                            <div class="setting slider-setting" id="IM_ARROWS"><input type="range" class="display-slider"
+                                    min="64" max="512" step="64" value="64" disabled=""><input type="range"
+                                    class="real-slider" min="64" max="512" step="64" value="64">
+                                <div class="slider-value-holder"><span class="setting-title">Arrows</span><span
+                                        class="slider-value">64</span></div>
+                            </div>
+                            <div class="setting combobox-setting" id="IM_KEEP_ITEMS">
+                                <div class="combobox-wrapper"><span class="combobox-title">Keep Items</span></div>
+                                <ul class="combobox-items collapsed-combobox">
+                                    <li>Sword</li>
+                                    <li>Bow</li>
+                                    <li>PickAxe</li>
+                                    <li>Axe</li>
+                                    <li>Shovel</li>
+                                    <li>Golden Apple</li>
+                                    <li>Head</li>
+                                    <li>Buckets</li>
+                                </ul>
+                            </div>
+                            <div class="setting slider-setting setting-disabled" id="IM_WEAPON_SLOT"><input type="range"
+                                    class="display-slider" min="1" max="9" step="1" value="1" disabled=""><input
+                                    type="range" class="real-slider" min="1" max="9" step="1" value="1">
+                                <div class="slider-value-holder"><span class="setting-title">Sword Slot</span><span
+                                        class="slider-value">1</span></div>
+                            </div>
+                            <div class="setting slider-setting setting-disabled" id="IM_BOW_SLOT"><input type="range"
+                                    class="display-slider" min="1" max="9" step="1" value="1" disabled=""><input
+                                    type="range" class="real-slider" min="1" max="9" step="1" value="1">
+                                <div class="slider-value-holder"><span class="setting-title">Bow Slot</span><span
+                                        class="slider-value">1</span></div>
+                            </div>
+                            <div class="setting slider-setting setting-disabled" id="IM_PICKAXE_SLOT"><input type="range"
+                                    class="display-slider" min="1" max="9" step="1" value="1" disabled=""><input
+                                    type="range" class="real-slider" min="1" max="9" step="1" value="1">
+                                <div class="slider-value-holder"><span class="setting-title">Pickaxe Slot</span><span
+                                        class="slider-value">1</span></div>
+                            </div>
+                            <div class="setting slider-setting setting-disabled" id="IM_AXE_SLOT"><input type="range"
+                                    class="display-slider" min="1" max="9" step="1" value="1" disabled=""><input
+                                    type="range" class="real-slider" min="1" max="9" step="1" value="1">
+                                <div class="slider-value-holder"><span class="setting-title">Axe Slot</span><span
+                                        class="slider-value">1</span></div>
+                            </div>
+                            <div class="setting slider-setting setting-disabled" id="IM_SHOVEL_SLOT"><input type="range"
+                                    class="display-slider" min="1" max="9" step="1" value="1" disabled=""><input
+                                    type="range" class="real-slider" min="1" max="9" step="1" value="1">
+                                <div class="slider-value-holder"><span class="setting-title">Shovel Slot</span><span
+                                        class="slider-value">1</span></div>
+                            </div>
+                            <div class="setting slider-setting setting-disabled" id="IM_GAPPLE_SLOT"><input type="range"
+                                    class="display-slider" min="1" max="9" step="1" value="1" disabled=""><input
+                                    type="range" class="real-slider" min="1" max="9" step="1" value="1">
+                                <div class="slider-value-holder"><span class="setting-title">Golden Apple Slot</span><span
+                                        class="slider-value">1</span></div>
+                            </div>
+                            <div class="setting slider-setting setting-disabled" id="IM_HEAD_SLOT"><input type="range"
+                                    class="display-slider" min="1" max="9" step="1" value="1" disabled=""><input
+                                    type="range" class="real-slider" min="1" max="9" step="1" value="1">
+                                <div class="slider-value-holder"><span class="setting-title">Head Slot</span><span
+                                        class="slider-value">1</span></div>
+                            </div>
+                            <div class="setting combobox-setting" id="IM_MATERIALS">
+                                <div class="combobox-wrapper"><span class="combobox-title">Keep Materials</span></div>
+                                <ul class="combobox-items collapsed-combobox">
+                                    <li>Ores</li>
+                                    <li>Sticks</li>
+                                </ul>
+                            </div>
+                            <div class="setting combobox-setting" id="IM_AUTO_DISABLE">
+                                <div class="combobox-wrapper"><span class="combobox-title">Disable On</span></div>
+                                <ul class="combobox-items collapsed-combobox">
+                                    <li>World Change</li>
+                                    <li>Game End</li>
+                                    <li>Death</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="AntiCactus-module" class="module">
+                    <div class="module-header"><span class="module-title">AntiCactus</span></div>
+                    <div class="module-settings-wrapper"></div>
+                </div>
+                <div id="AntiVoid-module" class="module">
+                    <div class="module-header"><span class="module-title">AntiVoid</span><span
+                            class="module-expand">v</span></div>
+                    <div class="module-settings-wrapper">
+                        <div class="module-settings">
+                            <div id="AV_MODE" class="setting selectbox-setting"><span class="setting-title">Mode</span><span
+                                    class="selectbox-value">Simple</span></div>
+                            <div class="setting slider-setting setting-disabled" id="AV_MOTION"><input type="range"
+                                    class="display-slider" min="2.5" max="3.5" step="0.5" value="2.5" disabled=""><input
+                                    type="range" class="real-slider" min="2.5" max="3.5" step="0.5" value="2.5">
+                                <div class="slider-value-holder"><span class="setting-title">Motion</span><span
+                                        class="slider-value">2.5</span></div>
+                            </div>
+                            <div id="AV_BOOST" class="setting checkbox-setting setting-disabled"><span
+                                    class="setting-title">Boost</span>
+                                <div class="checkbox-value"></div>
+                            </div>
+                            <div id="AV_VOID_CHECK" class="setting checkbox-setting setting-disabled"><span
+                                    class="setting-title">Void check</span>
+                                <div class="checkbox-value"></div>
+                            </div>
+                            <div class="setting slider-setting" id="AV_FALLDIST"><input type="range" class="display-slider"
+                                    min="1" max="10" step="0.5" value="1" disabled=""><input type="range"
+                                    class="real-slider" min="1" max="10" step="0.5" value="1">
+                                <div class="slider-value-holder"><span class="setting-title">Fall Distance</span><span
+                                        class="slider-value">1</span></div>
+                            </div>
+                            <div class="setting slider-setting setting-disabled" id="AV_HPLIMIT"><input type="range"
+                                    class="display-slider" min="0" max="20" step="1" value="0" disabled=""><input
+                                    type="range" class="real-slider" min="0" max="20" step="1" value="0">
+                                <div class="slider-value-holder"><span class="setting-title">Health limit</span><span
+                                        class="slider-value">0</span></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="AntiObbyTrap-module" class="module">
+                    <div class="module-header"><span class="module-title">AntiObbyTrap</span></div>
+                    <div class="module-settings-wrapper"></div>
+                </div>
+                <div id="AbortBreaking-module" class="module">
+                    <div class="module-header"><span class="module-title">AbortBreaking</span></div>
+                    <div class="module-settings-wrapper"></div>
+                </div>
+                <div id="BedBreaker-module" class="module">
+                    <div class="module-header"><span class="module-title">BedBreaker</span><span
+                            class="module-expand">v</span></div>
+                    <div class="module-settings-wrapper">
+                        <div class="module-settings">
+                            <div id="BB_MODE" class="setting selectbox-setting"><span class="setting-title">Mode</span><span
+                                    class="selectbox-value">Simple</span></div>
+                            <div class="setting slider-setting" id="BB_RADIUS"><input type="range" class="display-slider"
+                                    min="3" max="5" step="1" value="3" disabled=""><input type="range" class="real-slider"
+                                    min="3" max="5" step="1" value="3">
+                                <div class="slider-value-holder"><span class="setting-title">Break radius</span><span
+                                        class="slider-value">3</span></div>
+                            </div>
+                            <div id="BB_DRAW_RADIUS" class="setting checkbox-setting"><span class="setting-title">Draw
+                                    radius</span>
+                                <div class="checkbox-value"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="visuals-tab" class="panel">
+            <div class="panel-header"><span class="panel-title">Visuals</span><img class="panel-icon" loading="lazy"
+                    src="/static/novogui/icons/visuals.png"></div>
+            <div class="panel-elements">
+                <div id="HUD-module" class="module">
+                    <div class="module-header"><span class="module-title">HUD</span><span class="module-expand">v</span>
+                    </div>
+                    <div class="module-settings-wrapper">
+                        <div class="module-settings">
+                            <div class="setting textbox-setting setting-disabled" id="CLIENT_NAME"><span
+                                    class="setting-title">Client Name</span><input type="text" class="clickgui-textbox"
+                                    placeholder="Novoline"></div>
+                            <div class="setting combobox-setting" id="HUDELEMENTS">
+                                <div class="combobox-wrapper"><span class="combobox-title">Elements</span></div>
+                                <ul class="combobox-items collapsed-combobox">
+                                    <li>ModuleList</li>
+                                    <li>UserInfo</li>
+                                    <li>HotBar</li>
+                                    <li>Notifications</li>
+                                    <li>TargetsList</li>
+                                    <li>ArmorHUD</li>
+                                    <li>Scoreboard</li>
+                                    <li>Bossbar</li>
+                                    <li>PotionHUD</li>
+                                    <li>Coords</li>
+                                    <li>Speed</li>
+                                    <li>Name</li>
+                                    <li>Time</li>
+                                    <li>FPS</li>
+                                </ul>
+                            </div>
+                            <div id="HUD_FONT" class="setting selectbox-setting"><span
+                                    class="setting-title">Font</span><span class="selectbox-value">Client</span></div>
+                            <div id="SUFFIX_TYPE" class="setting selectbox-setting setting-disabled"><span
+                                    class="setting-title">Suffix</span><span class="selectbox-value">Simple</span></div>
+                            <div id="BACKGROUND_MODE" class="setting selectbox-setting"><span
+                                    class="setting-title">Background</span><span class="selectbox-value">Outline</span>
+                            </div>
+                            <div id="POTION_MODE" class="setting selectbox-setting setting-disabled"><span
+                                    class="setting-title">ModuleList</span><span class="selectbox-value">Rainbow</span>
+                            </div>
+                            <div class="setting color-setting" id="HUD_COLOR">
+                                <div class="sliders" slider="h"><input type="range" class="color-slider h-slider" min="1"
+                                        max="360" disabled=""><input type="range" class="real-color-slider real-h-slider"
+                                        min="0" max="360" slider="h"><input type="range"
+                                        class="color-slider s-slider disabled-color-slider" min="0" max="100" disabled=""
+                                        style="background-color: rgb(0, 255, 255);"><input type="range"
+                                        class="real-color-slider real-s-slider disabled-color-slider" min="0" max="100"
+                                        slider="s"><input type="range" class="color-slider l-slider disabled-color-slider"
+                                        min="0" max="100" disabled="" style="background-color: rgb(0, 255, 255);"><input
+                                        type="range" class="real-color-slider real-l-slider disabled-color-slider" min="0"
+                                        max="100" slider="l"><span class="setting-title">Color</span></div>
+                            </div>
+                            <div class="setting slider-setting setting-disabled" id="SCOREBOARD_POS"><input type="range"
+                                    class="display-slider" min="-150" max="200" step="5" value="-150" disabled=""><input
+                                    type="range" class="real-slider" min="-150" max="200" step="5" value="-150">
+                                <div class="slider-value-holder"><span class="setting-title">Scoreboard Height</span><span
+                                        class="slider-value">-150</span></div>
+                            </div>
+                            <div class="setting slider-setting setting-disabled" id="BACKGROUND_ALPHA"><input type="range"
+                                    class="display-slider" min="1" max="255" step="5" value="1" disabled=""><input
+                                    type="range" class="real-slider" min="1" max="255" step="5" value="1">
+                                <div class="slider-value-holder"><span class="setting-title">Background Alpha</span><span
+                                        class="slider-value">1</span></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="ClickGui-module" class="module">
+                    <div class="module-header"><span class="module-title">ClickGui</span><span
+                            class="module-expand">v</span></div>
+                    <div class="module-settings-wrapper">
+                        <div class="module-settings">
+                            <div id="CGUI_DESIGN" class="setting selectbox-setting"><span
+                                    class="setting-title">Design</span><span class="selectbox-value">Material</span></div>
+                            <div id="BLUR" class="setting checkbox-setting"><span class="setting-title">Blur</span>
+                                <div class="checkbox-value"></div>
+                            </div>
+                            <div id="BLUR" class="setting checkbox-setting"><span class="setting-title">Close
+                                    Previous</span>
+                                <div class="checkbox-value"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="Glow-module" class="module">
+                    <div class="module-header"><span class="module-title">Glow</span><span class="module-expand">v</span>
+                    </div>
+                    <div class="module-settings-wrapper">
+                        <div class="module-settings">
+                            <div class="setting combobox-setting" id="ESPTARGETS">
+                                <div class="combobox-wrapper"><span class="combobox-title">Targets</span></div>
+                                <ul class="combobox-items collapsed-combobox">
+                                    <li>Players</li>
+                                    <li>Animals</li>
+                                    <li>Mobs</li>
+                                    <li>Passives</li>
+                                </ul>
+                            </div>
+                            <div id="Player_color" class="setting selectbox-setting"><span class="setting-title">Outline
+                                    Color</span><span class="selectbox-value">Team</span></div>
+                            <div class="setting color-setting setting-disabled" id="ESP_COLOR">
+                                <div class="sliders" slider="h"><input type="range" class="color-slider h-slider" min="1"
+                                        max="360" disabled=""><input type="range" class="real-color-slider real-h-slider"
+                                        min="0" max="360" slider="h"><input type="range"
+                                        class="color-slider s-slider disabled-color-slider" min="0" max="100" disabled=""
+                                        style="background-color: rgb(0, 255, 255);"><input type="range"
+                                        class="real-color-slider real-s-slider disabled-color-slider" min="0" max="100"
+                                        slider="s"><input type="range" class="color-slider l-slider disabled-color-slider"
+                                        min="0" max="100" disabled="" style="background-color: rgb(0, 255, 255);"><input
+                                        type="range" class="real-color-slider real-l-slider disabled-color-slider" min="0"
+                                        max="100" slider="l"><span class="setting-title">Color</span></div>
+                            </div>
+                            <div class="setting slider-setting" id="ESPAlpha"><input type="range" class="display-slider"
+                                    min="50" max="255" step="5" value="50" disabled=""><input type="range"
+                                    class="real-slider" min="50" max="255" step="5" value="50">
+                                <div class="slider-value-holder"><span class="setting-title">Alpha</span><span
+                                        class="slider-value">50</span></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="Chams-module" class="module">
+                    <div class="module-header"><span class="module-title">Chams</span><span class="module-expand">v</span>
+                    </div>
+                    <div class="module-settings-wrapper">
+                        <div class="module-settings">
+                            <div class="setting combobox-setting" id="CTARGETS">
+                                <div class="combobox-wrapper"><span class="combobox-title">Targets</span></div>
+                                <ul class="combobox-items collapsed-combobox">
+                                    <li>Players</li>
+                                    <li>Animals</li>
+                                    <li>Mobs</li>
+                                    <li>Passives</li>
+                                </ul>
+                            </div>
+                            <div id="ChamsColored" class="setting checkbox-setting"><span
+                                    class="setting-title">Colored</span>
+                                <div class="checkbox-value"></div>
+                            </div>
+                            <div class="setting color-setting setting-disabled" id="VISIBLE_CHAMS">
+                                <div class="sliders" slider="h"><input type="range" class="color-slider h-slider" min="1"
+                                        max="360" disabled=""><input type="range" class="real-color-slider real-h-slider"
+                                        min="0" max="360" slider="h"><input type="range"
+                                        class="color-slider s-slider disabled-color-slider" min="0" max="100" disabled=""
+                                        style="background-color: rgb(0, 255, 255);"><input type="range"
+                                        class="real-color-slider real-s-slider disabled-color-slider" min="0" max="100"
+                                        slider="s"><input type="range" class="color-slider l-slider disabled-color-slider"
+                                        min="0" max="100" disabled="" style="background-color: rgb(0, 255, 255);"><input
+                                        type="range" class="real-color-slider real-l-slider disabled-color-slider" min="0"
+                                        max="100" slider="l"><span class="setting-title">Visible</span></div>
+                            </div>
+                            <div class="setting color-setting setting-disabled" id="HIDDEN_CHAMS">
+                                <div class="sliders" slider="h"><input type="range" class="color-slider h-slider" min="1"
+                                        max="360" disabled=""><input type="range" class="real-color-slider real-h-slider"
+                                        min="0" max="360" slider="h"><input type="range"
+                                        class="color-slider s-slider disabled-color-slider" min="0" max="100" disabled=""
+                                        style="background-color: rgb(0, 255, 255);"><input type="range"
+                                        class="real-color-slider real-s-slider disabled-color-slider" min="0" max="100"
+                                        slider="s"><input type="range" class="color-slider l-slider disabled-color-slider"
+                                        min="0" max="100" disabled="" style="background-color: rgb(0, 255, 255);"><input
+                                        type="range" class="real-color-slider real-l-slider disabled-color-slider" min="0"
+                                        max="100" slider="l"><span class="setting-title">Hidden</span></div>
+                            </div>
+                            <div class="setting slider-setting setting-disabled" id="VAlpha"><input type="range"
+                                    class="display-slider" min="50" max="255" step="5" value="50" disabled=""><input
+                                    type="range" class="real-slider" min="50" max="255" step="5" value="50">
+                                <div class="slider-value-holder"><span class="setting-title">Alpha</span><span
+                                        class="slider-value">50</span></div>
+                            </div>
+                            <div id="CHAMS_MT" class="setting checkbox-setting setting-disabled"><span
+                                    class="setting-title">Material</span>
+                                <div class="checkbox-value"></div>
+                            </div>
+                            <div id="ChamsRainbow" class="setting checkbox-setting setting-disabled"><span
+                                    class="setting-title">Rainbow</span>
+                                <div class="checkbox-value"></div>
+                            </div>
+                            <div id="PULSE" class="setting checkbox-setting setting-disabled"><span
+                                    class="setting-title">Pulse</span>
+                                <div class="checkbox-value"></div>
+                            </div>
+                            <div class="setting slider-setting setting-disabled" id="PS"><input type="range"
+                                    class="display-slider" min="5" max="20" step="1" value="5" disabled=""><input
+                                    type="range" class="real-slider" min="5" max="20" step="1" value="5">
+                                <div class="slider-value-holder"><span class="setting-title">Pulse speed</span><span
+                                        class="slider-value">5</span></div>
+                            </div>
+                            <div id="ONLYTARGETS" class="setting checkbox-setting"><span class="setting-title">Targets
+                                    Only</span>
+                                <div class="checkbox-value"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="ChestESP-module" class="module">
+                    <div class="module-header"><span class="module-title">ChestESP</span><span
+                            class="module-expand">v</span></div>
+                    <div class="module-settings-wrapper">
+                        <div class="module-settings">
+                            <div id="CHEST_ESP_MODE" class="setting selectbox-setting"><span
+                                    class="setting-title">Mode</span><span class="selectbox-value">Combined</span></div>
+                            <div class="setting color-setting" id="CHESTESP_COLOR">
+                                <div class="sliders" slider="h"><input type="range" class="color-slider h-slider" min="1"
+                                        max="360" disabled=""><input type="range" class="real-color-slider real-h-slider"
+                                        min="0" max="360" slider="h"><input type="range"
+                                        class="color-slider s-slider disabled-color-slider" min="0" max="100" disabled=""
+                                        style="background-color: rgb(0, 255, 255);"><input type="range"
+                                        class="real-color-slider real-s-slider disabled-color-slider" min="0" max="100"
+                                        slider="s"><input type="range" class="color-slider l-slider disabled-color-slider"
+                                        min="0" max="100" disabled="" style="background-color: rgb(0, 255, 255);"><input
+                                        type="range" class="real-color-slider real-l-slider disabled-color-slider" min="0"
+                                        max="100" slider="l"><span class="setting-title">Color</span></div>
+                            </div>
+                            <div class="setting color-setting setting-disabled" id="CHESTESP_VISIBLE_COLOR">
+                                <div class="sliders" slider="h"><input type="range" class="color-slider h-slider" min="1"
+                                        max="360" disabled=""><input type="range" class="real-color-slider real-h-slider"
+                                        min="0" max="360" slider="h"><input type="range"
+                                        class="color-slider s-slider disabled-color-slider" min="0" max="100" disabled=""
+                                        style="background-color: rgb(0, 255, 255);"><input type="range"
+                                        class="real-color-slider real-s-slider disabled-color-slider" min="0" max="100"
+                                        slider="s"><input type="range" class="color-slider l-slider disabled-color-slider"
+                                        min="0" max="100" disabled="" style="background-color: rgb(0, 255, 255);"><input
+                                        type="range" class="real-color-slider real-l-slider disabled-color-slider" min="0"
+                                        max="100" slider="l"><span class="setting-title">Visible</span></div>
+                            </div>
+                            <div class="setting color-setting setting-disabled" id="CHESTESP_HIDDEN_COLOR">
+                                <div class="sliders" slider="h"><input type="range" class="color-slider h-slider" min="1"
+                                        max="360" disabled=""><input type="range" class="real-color-slider real-h-slider"
+                                        min="0" max="360" slider="h"><input type="range"
+                                        class="color-slider s-slider disabled-color-slider" min="0" max="100" disabled=""
+                                        style="background-color: rgb(0, 255, 255);"><input type="range"
+                                        class="real-color-slider real-s-slider disabled-color-slider" min="0" max="100"
+                                        slider="s"><input type="range" class="color-slider l-slider disabled-color-slider"
+                                        min="0" max="100" disabled="" style="background-color: rgb(0, 255, 255);"><input
+                                        type="range" class="real-color-slider real-l-slider disabled-color-slider" min="0"
+                                        max="100" slider="l"><span class="setting-title">Hidden</span></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="Nametags-module" class="module">
+                    <div class="module-header"><span class="module-title">Nametags</span><span
+                            class="module-expand">v</span></div>
+                    <div class="module-settings-wrapper">
+                        <div class="module-settings">
+                            <div id="NAMETAGS_FONT" class="setting selectbox-setting"><span class="setting-title">Nametags
+                                    Font</span><span class="selectbox-value">Client</span></div>
+                            <div class="setting slider-setting" id="NAMETAGS_RENDER_DIST"><input type="range"
+                                    class="display-slider" min="4" max="256" step="4" value="4" disabled=""><input
+                                    type="range" class="real-slider" min="4" max="256" step="4" value="4">
+                                <div class="slider-value-holder"><span class="setting-title">Render distance</span><span
+                                        class="slider-value">4</span></div>
+                            </div>
+                            <div class="setting combobox-setting" id="NAMETAGS_CONTENT">
+                                <div class="combobox-wrapper"><span class="combobox-title">Content</span></div>
+                                <ul class="combobox-items collapsed-combobox">
+                                    <li>Distance</li>
+                                    <li>Armor</li>
+                                </ul>
+                            </div>
+                            <div class="setting combobox-setting" id="NAMETAGS_ADDITIONS">
+                                <div class="combobox-wrapper"><span class="combobox-title">Additions</span></div>
+                                <ul class="combobox-items collapsed-combobox">
+                                    <li>Background</li>
+                                    <li>Health</li>
+                                </ul>
+                            </div>
+                            <div class="setting slider-setting setting-disabled" id="NAMETAGS_BG_ALPHA"><input type="range"
+                                    class="display-slider" min="50" max="255" step="5" value="50" disabled=""><input
+                                    type="range" class="real-slider" min="50" max="255" step="5" value="50">
+                                <div class="slider-value-holder"><span class="setting-title">Background Alpha</span><span
+                                        class="slider-value">50</span></div>
+                            </div>
+                            <div id="NAMETAGS_HEALTH" class="setting selectbox-setting setting-disabled"><span
+                                    class="setting-title">Health Type</span><span class="selectbox-value">Bar</span></div>
+                            <div id="ONLY_TAR" class="setting checkbox-setting"><span class="setting-title">Only
+                                    targets</span>
+                                <div class="checkbox-value"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="XRay-module" class="module">
+                    <div class="module-header"><span class="module-title">XRay</span><span class="module-expand">v</span>
+                    </div>
+                    <div class="module-settings-wrapper">
+                        <div class="module-settings">
+                            <div class="setting slider-setting" id="OPACITY"><input type="range" class="display-slider"
+                                    min="0" max="255" step="5" value="0" disabled=""><input type="range" class="real-slider"
+                                    min="0" max="255" step="5" value="0">
+                                <div class="slider-value-holder"><span class="setting-title">Opacity</span><span
+                                        class="slider-value">0</span></div>
+                            </div>
+                            <div class="setting slider-setting" id="XRAY_DISTANCE"><input type="range"
+                                    class="display-slider" min="16" max="64" step="4" value="16" disabled=""><input
+                                    type="range" class="real-slider" min="16" max="64" step="4" value="16">
+                                <div class="slider-value-holder"><span class="setting-title">Distance</span><span
+                                        class="slider-value">16</span></div>
+                            </div>
+                            <div id="XR_TRACERS" class="setting checkbox-setting"><span class="setting-title">Tracers</span>
+                                <div class="checkbox-value"></div>
+                            </div>
+                            <div id="XR_ESP" class="setting checkbox-setting"><span class="setting-title">ESP</span>
+                                <div class="checkbox-value"></div>
+                            </div>
+                            <div class="setting combobox-setting setting-disabled" id="ESP_ORES">
+                                <div class="combobox-wrapper"><span class="combobox-title">ESP Ores</span></div>
+                                <ul class="combobox-items collapsed-combobox">
+                                    <li>Redstone</li>
+                                    <li>Diamond</li>
+                                    <li>Emerald</li>
+                                    <li>Lapis</li>
+                                    <li>Iron</li>
+                                    <li>Coal</li>
+                                    <li>Gold</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="Animations-module" class="module">
+                    <div class="module-header"><span class="module-title">Animations</span><span
+                            class="module-expand">v</span></div>
+                    <div class="module-settings-wrapper">
+                        <div class="module-settings">
+                            <div id="Anim_Mode" class="setting selectbox-setting"><span
+                                    class="setting-title">Block</span><span class="selectbox-value">Swank</span></div>
+                            <div id="HIT_ANIM_MODE" class="setting selectbox-setting"><span
+                                    class="setting-title">Hit</span><span class="selectbox-value">Vanilla</span></div>
+                            <div class="setting slider-setting" id="SWING_SLOW"><input type="range" class="display-slider"
+                                    min="-4" max="6" step="1" value="-4" disabled=""><input type="range" class="real-slider"
+                                    min="-4" max="6" step="1" value="-4">
+                                <div class="slider-value-holder"><span class="setting-title">Slowdown</span><span
+                                        class="slider-value">-4</span></div>
+                            </div>
+                            <div class="setting slider-setting" id="SCALE_FACTOR"><input type="range" class="display-slider"
+                                    min="0" max="0.5" step="0.1" value="0" disabled=""><input type="range"
+                                    class="real-slider" min="0" max="0.5" step="0.1" value="0">
+                                <div class="slider-value-holder"><span class="setting-title">Downscale Factor</span><span
+                                        class="slider-value">0</span></div>
+                            </div>
+                            <div class="setting slider-setting" id="HIT_HEIGHT"><input type="range" class="display-slider"
+                                    min="-10" max="30" step="1" value="-10" disabled=""><input type="range"
+                                    class="real-slider" min="-10" max="30" step="1" value="-10">
+                                <div class="slider-value-holder"><span class="setting-title">Hit Height</span><span
+                                        class="slider-value">-10</span></div>
+                            </div>
+                            <div class="setting slider-setting" id="BLOCK_HEIGHT"><input type="range" class="display-slider"
+                                    min="0" max="60" step="1" value="0" disabled=""><input type="range" class="real-slider"
+                                    min="0" max="60" step="1" value="0">
+                                <div class="slider-value-holder"><span class="setting-title">Block Height</span><span
+                                        class="slider-value">0</span></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="GlintColorize-module" class="module">
+                    <div class="module-header"><span class="module-title">GlintColorize</span><span
+                            class="module-expand">v</span></div>
+                    <div class="module-settings-wrapper">
+                        <div class="module-settings">
+                            <div class="setting color-setting" id="GLINT_COLOR">
+                                <div class="sliders" slider="h"><input type="range" class="color-slider h-slider" min="1"
+                                        max="360" disabled=""><input type="range" class="real-color-slider real-h-slider"
+                                        min="0" max="360" slider="h"><input type="range"
+                                        class="color-slider s-slider disabled-color-slider" min="0" max="100" disabled=""
+                                        style="background-color: rgb(0, 255, 255);"><input type="range"
+                                        class="real-color-slider real-s-slider disabled-color-slider" min="0" max="100"
+                                        slider="s"><input type="range" class="color-slider l-slider disabled-color-slider"
+                                        min="0" max="100" disabled="" style="background-color: rgb(0, 255, 255);"><input
+                                        type="range" class="real-color-slider real-l-slider disabled-color-slider" min="0"
+                                        max="100" slider="l"><span class="setting-title">Glint color</span></div>
+                            </div>
+                            <div id="GLINT_RAINBOW" class="setting checkbox-setting"><span
+                                    class="setting-title">Rainbow</span>
+                                <div class="checkbox-value"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="DamageParticles-module" class="module">
+                    <div class="module-header"><span class="module-title">DamageParticles</span></div>
+                    <div class="module-settings-wrapper"></div>
+                </div>
+                <div id="Tracers-module" class="module">
+                    <div class="module-header"><span class="module-title">Tracers</span><span class="module-expand">v</span>
+                    </div>
+                    <div class="module-settings-wrapper">
+                        <div class="module-settings">
+                            <div id="TC_ONLY_TAR" class="setting checkbox-setting"><span class="setting-title">Targets
+                                    Only</span>
+                                <div class="checkbox-value"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="Crosshair-module" class="module">
+                    <div class="module-header"><span class="module-title">Crosshair</span><span
+                            class="module-expand">v</span></div>
+                    <div class="module-settings-wrapper">
+                        <div class="module-settings">
+                            <div id="Dynamic" class="setting checkbox-setting"><span class="setting-title">Dynamic</span>
+                                <div class="checkbox-value"></div>
+                            </div>
+                            <div class="setting slider-setting" id="Gap"><input type="range" class="display-slider"
+                                    min="0.25" max="15" step="0.05" value="0.25" disabled=""><input type="range"
+                                    class="real-slider" min="0.25" max="15" step="0.05" value="0.25">
+                                <div class="slider-value-holder"><span class="setting-title">Gap</span><span
+                                        class="slider-value">0.25</span></div>
+                            </div>
+                            <div class="setting slider-setting" id="Width"><input type="range" class="display-slider"
+                                    min="0" max="10" step="0.01" value="0" disabled=""><input type="range"
+                                    class="real-slider" min="0" max="10" step="0.01" value="0">
+                                <div class="slider-value-holder"><span class="setting-title">Width</span><span
+                                        class="slider-value">0</span></div>
+                            </div>
+                            <div class="setting slider-setting" id="CH_size"><input type="range" class="display-slider"
+                                    min="0.25" max="15" step="0.05" value="0.25" disabled=""><input type="range"
+                                    class="real-slider" min="0.25" max="15" step="0.05" value="0.25">
+                                <div class="slider-value-holder"><span class="setting-title">Size</span><span
+                                        class="slider-value">0.25</span></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="Brightness-module" class="module">
+                    <div class="module-header"><span class="module-title">Brightness</span></div>
+                    <div class="module-settings-wrapper"></div>
+                </div>
+                <div id="ItemPhysic-module" class="module">
+                    <div class="module-header"><span class="module-title">ItemPhysic</span></div>
+                    <div class="module-settings-wrapper"></div>
+                </div>
+                <div id="ItemESP-module" class="module">
+                    <div class="module-header"><span class="module-title">ItemESP</span><span class="module-expand">v</span>
+                    </div>
+                    <div class="module-settings-wrapper">
+                        <div class="module-settings">
+                            <div id="ITEM_RAINBOW" class="setting checkbox-setting"><span
+                                    class="setting-title">Rainbow</span>
+                                <div class="checkbox-value"></div>
+                            </div>
+                            <div class="setting slider-setting" id="ITEMS_ALPHA"><input type="range" class="display-slider"
+                                    min="1" max="255" step="1" value="1" disabled=""><input type="range" class="real-slider"
+                                    min="1" max="255" step="1" value="1">
+                                <div class="slider-value-holder"><span class="setting-title">Alpha</span><span
+                                        class="slider-value">1</span></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="Radar-module" class="module">
+                    <div class="module-header"><span class="module-title">Radar</span><span class="module-expand">v</span>
+                    </div>
+                    <div class="module-settings-wrapper">
+                        <div class="module-settings">
+                            <div class="setting slider-setting" id="RADAR_ALPHA"><input type="range" class="display-slider"
+                                    min="50" max="255" step="1" value="50" disabled=""><input type="range"
+                                    class="real-slider" min="50" max="255" step="1" value="50">
+                                <div class="slider-value-holder"><span class="setting-title">Alpha</span><span
+                                        class="slider-value">50</span></div>
+                            </div>
+                            <div class="setting slider-setting" id="RADAR_SCALE"><input type="range" class="display-slider"
+                                    min="0.25" max="5" step="0.05" value="0.25" disabled=""><input type="range"
+                                    class="real-slider" min="0.25" max="5" step="0.05" value="0.25">
+                                <div class="slider-value-holder"><span class="setting-title">Scale</span><span
+                                        class="slider-value">0.25</span></div>
+                            </div>
+                            <div class="setting slider-setting" id="RADAR_X_POS"><input type="range" class="display-slider"
+                                    min="1" max="1280" step="4" value="1" disabled=""><input type="range"
+                                    class="real-slider" min="1" max="1280" step="4" value="1">
+                                <div class="slider-value-holder"><span class="setting-title">X</span><span
+                                        class="slider-value">1</span></div>
+                            </div>
+                            <div class="setting slider-setting" id="RADAR_Y_POS"><input type="range" class="display-slider"
+                                    min="1" max="540" step="4" value="1" disabled=""><input type="range" class="real-slider"
+                                    min="1" max="540" step="4" value="1">
+                                <div class="slider-value-holder"><span class="setting-title">Y</span><span
+                                        class="slider-value">1</span></div>
+                            </div>
+                            <div class="setting slider-setting" id="RADAR_SIZE"><input type="range" class="display-slider"
+                                    min="50" max="500" step="5" value="50" disabled=""><input type="range"
+                                    class="real-slider" min="50" max="500" step="5" value="50">
+                                <div class="slider-value-holder"><span class="setting-title">Size</span><span
+                                        class="slider-value">50</span></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="Atmosphere-module" class="module">
+                    <div class="module-header"><span class="module-title">Atmosphere</span><span
+                            class="module-expand">v</span></div>
+                    <div class="module-settings-wrapper">
+                        <div class="module-settings">
+                            <div class="setting slider-setting" id="WORLD_TIME"><input type="range" class="display-slider"
+                                    min="1" max="24" step="0.5" value="1" disabled=""><input type="range"
+                                    class="real-slider" min="1" max="24" step="0.5" value="1">
+                                <div class="slider-value-holder"><span class="setting-title">Hour</span><span
+                                        class="slider-value">1</span></div>
+                            </div>
+                            <div id="WEATHER_CONTROL" class="setting checkbox-setting"><span class="setting-title">Weather
+                                    control</span>
+                                <div class="checkbox-value"></div>
+                            </div>
+                            <div id="WEATHER_MODE" class="setting selectbox-setting setting-disabled"><span
+                                    class="setting-title">Weather state</span><span class="selectbox-value">Clean</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="PlayerESP-module" class="module">
+                    <div class="module-header"><span class="module-title">PlayerESP</span><span
+                            class="module-expand">v</span></div>
+                    <div class="module-settings-wrapper">
+                        <div class="module-settings">
+                            <div class="setting combobox-setting" id="PESP_FILTER">
+                                <div class="combobox-wrapper"><span class="combobox-title">Filter</span></div>
+                                <ul class="combobox-items collapsed-combobox">
+                                    <li>Health</li>
+                                    <li>Armor</li>
+                                    <li>Box</li>
+                                    <li>Name</li>
+                                    <li>Skeleton</li>
+                                </ul>
+                            </div>
+                            <div id="BOX_HEALTH_MODE" class="setting selectbox-setting setting-disabled"><span
+                                    class="setting-title">Health</span><span class="selectbox-value">Hearts</span></div>
+                            <div id="BOX_MODE" class="setting selectbox-setting setting-disabled"><span
+                                    class="setting-title">Box mode</span><span class="selectbox-value">Basic</span></div>
+                            <div id="BOX_STYLE" class="setting selectbox-setting setting-disabled"><span
+                                    class="setting-title">Box Style</span><span class="selectbox-value">Full</span></div>
+                            <div id="BOX_COLOR_MODE" class="setting selectbox-setting setting-disabled"><span
+                                    class="setting-title">Box Color</span><span class="selectbox-value">Static</span></div>
+                            <div class="setting color-setting" id="BOX_COLOR">
+                                <div class="sliders" slider="h"><input type="range" class="color-slider h-slider" min="1"
+                                        max="360" disabled=""><input type="range" class="real-color-slider real-h-slider"
+                                        min="0" max="360" slider="h"><input type="range"
+                                        class="color-slider s-slider disabled-color-slider" min="0" max="100" disabled=""
+                                        style="background-color: rgb(0, 255, 255);"><input type="range"
+                                        class="real-color-slider real-s-slider disabled-color-slider" min="0" max="100"
+                                        slider="s"><input type="range" class="color-slider l-slider disabled-color-slider"
+                                        min="0" max="100" disabled="" style="background-color: rgb(0, 255, 255);"><input
+                                        type="range" class="real-color-slider real-l-slider disabled-color-slider" min="0"
+                                        max="100" slider="l"><span class="setting-title">Color</span></div>
+                            </div>
+                            <div id="PESP-ONLYTARGETS" class="setting checkbox-setting"><span class="setting-title">Targets
+                                    Only</span>
+                                <div class="checkbox-value"></div>
+                            </div>
+                            <div id="PESP-HT" class="setting checkbox-setting setting-disabled"><span
+                                    class="setting-title">HurtTime Check</span>
+                                <div class="checkbox-value"></div>
+                            </div>
+                            <div class="setting slider-setting setting-disabled" id="PEST-TRANSPARENCY"><input type="range"
+                                    class="display-slider" min="0" max="255" step="5" value="0" disabled=""><input
+                                    type="range" class="real-slider" min="0" max="255" step="5" value="0">
+                                <div class="slider-value-holder"><span class="setting-title">Transparency</span><span
+                                        class="slider-value">0</span></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="Waypoints-module" class="module">
+                    <div class="module-header"><span class="module-title">Waypoints</span></div>
+                    <div class="module-settings-wrapper"></div>
+                </div>
+                <div id="TabGui-module" class="module">
+                    <div class="module-header"><span class="module-title">TabGui</span></div>
+                    <div class="module-settings-wrapper"></div>
+                </div>
+                <div id="Camera-module" class="module">
+                    <div class="module-header"><span class="module-title">Camera</span><span class="module-expand">v</span>
+                    </div>
+                    <div class="module-settings-wrapper">
+                        <div class="module-settings">
+                            <div id="CAMERA_VC" class="setting checkbox-setting"><span class="setting-title">View
+                                    Clip</span>
+                                <div class="checkbox-value"></div>
+                            </div>
+                            <div id="CAMERA_NHC" class="setting checkbox-setting"><span class="setting-title">No Hurt
+                                    Cam</span>
+                                <div class="checkbox-value"></div>
+                            </div>
+                            <div id="CAMERA_MB" class="setting checkbox-setting"><span class="setting-title">Motion
+                                    Blur</span>
+                                <div class="checkbox-value"></div>
+                            </div>
+                            <div class="setting slider-setting setting-disabled" id="CAMERA_BA"><input type="range"
+                                    class="display-slider" min="1" max="10" step="1" value="1" disabled=""><input
+                                    type="range" class="real-slider" min="1" max="10" step="1" value="1">
+                                <div class="slider-value-holder"><span class="setting-title">Blur Amount</span><span
+                                        class="slider-value">1</span></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="Arrows-module" class="module">
+                    <div class="module-header"><span class="module-title">Arrows</span><span class="module-expand">v</span>
+                    </div>
+                    <div class="module-settings-wrapper">
+                        <div class="module-settings">
+                            <div id="ARROWS_ONLY_VISIBLES" class="setting checkbox-setting"><span class="setting-title">Not
+                                    in FOV only</span>
+                                <div class="checkbox-value"></div>
+                            </div>
+                            <div id="ARROWS_TARGETS_ONLY" class="setting checkbox-setting"><span
+                                    class="setting-title">Targets Only</span>
+                                <div class="checkbox-value"></div>
+                            </div>
+                            <div class="setting slider-setting" id="ARROWS_RADIUS"><input type="range"
+                                    class="display-slider" min="55" max="165" step="1" value="55" disabled=""><input
+                                    type="range" class="real-slider" min="55" max="165" step="1" value="55">
+                                <div class="slider-value-holder"><span class="setting-title">Radius</span><span
+                                        class="slider-value">55</span></div>
+                            </div>
+                            <div class="setting combobox-setting" id="ARROWS_TARGETS">
+                                <div class="combobox-wrapper"><span class="combobox-title">Targets</span></div>
+                                <ul class="combobox-items collapsed-combobox">
+                                    <li>Players</li>
+                                    <li>Animals</li>
+                                    <li>Mobs</li>
+                                </ul>
+                            </div>
+                            <div class="setting combobox-setting setting-disabled" id="ARROWS_FILTER">
+                                <div class="combobox-wrapper"><span class="combobox-title">Filters</span></div>
+                                <ul class="combobox-items collapsed-combobox">
+                                    <li>Teams</li>
+                                </ul>
+                            </div>
+                            <div id="ARROWS_COLORTYPE" class="setting selectbox-setting"><span class="setting-title">Color
+                                    Type</span><span class="selectbox-value">Static</span></div>
+                            <div id="ARROWS_RAINBOWTYPE" class="setting selectbox-setting setting-disabled"><span
+                                    class="setting-title">Rainbow Type</span><span class="selectbox-value">Static</span>
+                            </div>
+                            <div class="setting color-setting" id="ARROWS_COLOR">
+                                <div class="sliders" slider="h"><input type="range" class="color-slider h-slider" min="1"
+                                        max="360" disabled=""><input type="range" class="real-color-slider real-h-slider"
+                                        min="0" max="360" slider="h"><input type="range"
+                                        class="color-slider s-slider disabled-color-slider" min="0" max="100" disabled=""
+                                        style="background-color: rgb(0, 255, 255);"><input type="range"
+                                        class="real-color-slider real-s-slider disabled-color-slider" min="0" max="100"
+                                        slider="s"><input type="range" class="color-slider l-slider disabled-color-slider"
+                                        min="0" max="100" disabled="" style="background-color: rgb(0, 255, 255);"><input
+                                        type="range" class="real-color-slider real-l-slider disabled-color-slider" min="0"
+                                        max="100" slider="l"><span class="setting-title">Color</span></div>
+                            </div>
+                            <div id="ARROWS_ALPHA" class="setting selectbox-setting"><span class="setting-title">Alpha
+                                    Type</span><span class="selectbox-value">Distance</span></div>
+                            <div class="setting slider-setting setting-disabled" id="ARROWS_ALPHA_SLIDER"><input
+                                    type="range" class="display-slider" min="0" max="255" step="10" value="0"
+                                    disabled=""><input type="range" class="real-slider" min="0" max="255" step="10"
+                                    value="0">
+                                <div class="slider-value-holder"><span class="setting-title">Alpha</span><span
+                                        class="slider-value">0</span></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="exploits-tab" class="panel">
+            <div class="panel-header"><span class="panel-title">Exploits</span><img class="panel-icon" loading="lazy"
+                    src="/static/novogui/icons/exploits.png"></div>
+            <div class="panel-elements">
+                <div id="NoFall-module" class="module">
+                    <div class="module-header"><span class="module-title">NoFall</span><span class="module-expand">v</span>
+                    </div>
+                    <div class="module-settings-wrapper">
+                        <div class="module-settings">
+                            <div id="NF_MODE" class="setting selectbox-setting"><span class="setting-title">Mode</span><span
+                                    class="selectbox-value">Packet</span></div>
+                        </div>
+                    </div>
+                </div>
+                <div id="Phase-module" class="module">
+                    <div class="module-header"><span class="module-title">Phase</span></div>
+                    <div class="module-settings-wrapper"></div>
+                </div>
+                <div id="Teleport-module" class="module">
+                    <div class="module-header"><span class="module-title">Teleport</span><span
+                            class="module-expand">v</span></div>
+                    <div class="module-settings-wrapper">
+                        <div class="module-settings">
+                            <div id="TPMODE" class="setting selectbox-setting"><span class="setting-title">Mode</span><span
+                                    class="selectbox-value">LookTP</span></div>
+                            <div class="setting slider-setting setting-disabled" id="TP_FC_SPEED"><input type="range"
+                                    class="display-slider" min="1" max="5" step="0.5" value="1" disabled=""><input
+                                    type="range" class="real-slider" min="1" max="5" step="0.5" value="1">
+                                <div class="slider-value-holder"><span class="setting-title">Speed</span><span
+                                        class="slider-value">1</span></div>
+                            </div>
+                            <div class="setting slider-setting setting-disabled" id="TP_DEATH"><input type="range"
+                                    class="display-slider" min="30" max="150" step="5" value="30" disabled=""><input
+                                    type="range" class="real-slider" min="30" max="150" step="5" value="30">
+                                <div class="slider-value-holder"><span class="setting-title">Intial Y</span><span
+                                        class="slider-value">30</span></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="Blink-module" class="module">
+                    <div class="module-header"><span class="module-title">Blink</span><span class="module-expand">v</span>
+                    </div>
+                    <div class="module-settings-wrapper">
+                        <div class="module-settings">
+                            <div id="BLINK_LB" class="setting checkbox-setting"><span class="setting-title">Lagback
+                                    check</span>
+                                <div class="checkbox-value"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="Disabler-module" class="module">
+                    <div class="module-header"><span class="module-title">Disabler</span><span
+                            class="module-expand">v</span></div>
+                    <div class="module-settings-wrapper">
+                        <div class="module-settings">
+                            <div class="setting slider-setting" id="DISABLER_SPEED"><input type="range"
+                                    class="display-slider" min="1" max="9.5" step="0.1" value="1" disabled=""><input
+                                    type="range" class="real-slider" min="1" max="9.5" step="0.1" value="1">
+                                <div class="slider-value-holder"><span class="setting-title">Speed</span><span
+                                        class="slider-value">1</span></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="misc-tab" class="panel">
+            <div class="panel-header"><span class="panel-title">Misc</span><img class="panel-icon" loading="lazy"
+                    src="/static/novogui/icons/misc.png"></div>
+            <div class="panel-elements">
+                <div id="AutoHypixel-module" class="module">
+                    <div class="module-header"><span class="module-title">AutoHypixel</span><span
+                            class="module-expand">v</span></div>
+                    <div class="module-settings-wrapper">
+                        <div class="module-settings">
+                            <div class="setting combobox-setting" id="AH_CRAFTS">
+                                <div class="combobox-wrapper"><span class="combobox-title">Auto Crafts</span></div>
+                                <ul class="combobox-items collapsed-combobox">
+                                    <li>Planks</li>
+                                </ul>
+                            </div>
+                            <div id="AH_UHC_UHC" class="setting checkbox-setting"><span class="setting-title">Auto
+                                    UHC</span>
+                                <div class="checkbox-value"></div>
+                            </div>
+                            <div id="AH_UHC_AA" class="setting checkbox-setting setting-disabled"><span
+                                    class="setting-title">Auto Anduril</span>
+                                <div class="checkbox-value"></div>
+                            </div>
+                            <div id="AH_UHC_PIT" class="setting checkbox-setting"><span class="setting-title">Auto
+                                    Pit</span>
+                                <div class="checkbox-value"></div>
+                            </div>
+                            <div id="AH_UHC_QM" class="setting checkbox-setting setting-disabled"><span
+                                    class="setting-title">Quick Math</span>
+                                <div class="checkbox-value"></div>
+                            </div>
+                            <div id="AH_UHC_AT" class="setting checkbox-setting setting-disabled"><span
+                                    class="setting-title">Target Bounty</span>
+                                <div class="checkbox-value"></div>
+                            </div>
+                            <div class="setting slider-setting setting-disabled" id="AH_BOUNTY"><input type="range"
+                                    class="display-slider" min="50" max="5000" step="50" value="50" disabled=""><input
+                                    type="range" class="real-slider" min="50" max="5000" step="50" value="50">
+                                <div class="slider-value-holder"><span class="setting-title">Minimal Bounty</span><span
+                                        class="slider-value">50</span></div>
+                            </div>
+                            <div id="AH_UHC_MM" class="setting checkbox-setting"><span class="setting-title">Murder
+                                    Mystery</span>
+                                <div class="checkbox-value"></div>
+                            </div>
+                            <div id="AH_UHC_REC" class="setting checkbox-setting"><span
+                                    class="setting-title">Reconnect</span>
+                                <div class="checkbox-value"></div>
+                            </div>
+                            <div id="AH_UHC_AP" class="setting checkbox-setting"><span class="setting-title">Auto
+                                    Play</span>
+                                <div class="checkbox-value"></div>
+                            </div>
+                            <div class="setting slider-setting setting-disabled" id="AP_DELAY"><input type="range"
+                                    class="display-slider" min="1" max="10" step="1" value="1" disabled=""><input
+                                    type="range" class="real-slider" min="1" max="10" step="1" value="1">
+                                <div class="slider-value-holder"><span class="setting-title">Delay (Seconds)</span><span
+                                        class="slider-value">1</span></div>
+                            </div>
+                            <div id="AH_AUTO_GG" class="setting checkbox-setting"><span class="setting-title">Auto GG</span>
+                                <div class="checkbox-value"></div>
+                            </div>
+                            <div class="setting textbox-setting setting-disabled" id="AH_AUTO_GG_TEXT"><span
+                                    class="setting-title">Message</span><input type="text" class="clickgui-textbox"
+                                    placeholder="GG"></div>
+                        </div>
+                    </div>
+                </div>
+                <div id="GuiMove-module" class="module">
+                    <div class="module-header"><span class="module-title">GuiMove</span><span class="module-expand">v</span>
+                    </div>
+                    <div class="module-settings-wrapper">
+                        <div class="module-settings">
+                            <div id="GM_SNEAK" class="setting checkbox-setting"><span class="setting-title">Sneak</span>
+                                <div class="checkbox-value"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="AutoTool-module" class="module">
+                    <div class="module-header"><span class="module-title">AutoTool</span><span
+                            class="module-expand">v</span></div>
+                    <div class="module-settings-wrapper">
+                        <div class="module-settings">
+                            <div id="AT_AS" class="setting checkbox-setting"><span class="setting-title">Auto Weapon</span>
+                                <div class="checkbox-value"></div>
+                            </div>
+                            <div id="AT_AS_FS" class="setting checkbox-setting setting-disabled"><span
+                                    class="setting-title">Force Sword</span>
+                                <div class="checkbox-value"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="MiddleClick-module" class="module">
+                    <div class="module-header"><span class="module-title">MiddleClick</span><span
+                            class="module-expand">v</span></div>
+                    <div class="module-settings-wrapper">
+                        <div class="module-settings">
+                            <div id="MC_FRIEND" class="setting checkbox-setting"><span class="setting-title">Friend</span>
+                                <div class="checkbox-value"></div>
+                            </div>
+                            <div id="MC_PEARL" class="setting checkbox-setting"><span class="setting-title">Pearl</span>
+                                <div class="checkbox-value"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="Respawn-module" class="module">
+                    <div class="module-header"><span class="module-title">Respawn</span></div>
+                    <div class="module-settings-wrapper"></div>
+                </div>
+                <div id="GameSpeed-module" class="module">
+                    <div class="module-header"><span class="module-title">GameSpeed</span><span
+                            class="module-expand">v</span></div>
+                    <div class="module-settings-wrapper">
+                        <div class="module-settings">
+                            <div class="setting slider-setting" id="TIMERSPEED"><input type="range" class="display-slider"
+                                    min="0.3" max="5" step="0.05" value="0.3" disabled=""><input type="range"
+                                    class="real-slider" min="0.3" max="5" step="0.05" value="0.3">
+                                <div class="slider-value-holder"><span class="setting-title">Timer Speed</span><span
+                                        class="slider-value">0.3</span></div>
+                            </div>
+                            <div id="GS_LAGBACK" class="setting checkbox-setting"><span class="setting-title">Lagback
+                                    check</span>
+                                <div class="checkbox-value"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="NoEffects-module" class="module">
+                    <div class="module-header"><span class="module-title">NoEffects</span><span
+                            class="module-expand">v</span></div>
+                    <div class="module-settings-wrapper">
+                        <div class="module-settings">
+                            <div id="MINING_FATIGUE" class="setting checkbox-setting"><span class="setting-title">Mining
+                                    fatigue</span>
+                                <div class="checkbox-value"></div>
+                            </div>
+                            <div id="NIGHT_VISION" class="setting checkbox-setting"><span class="setting-title">Night
+                                    vision</span>
+                                <div class="checkbox-value"></div>
+                            </div>
+                            <div id="BLINDNESS" class="setting checkbox-setting"><span
+                                    class="setting-title">Blindness</span>
+                                <div class="checkbox-value"></div>
+                            </div>
+                            <div id="NAUSEA" class="setting checkbox-setting"><span class="setting-title">Nausea</span>
+                                <div class="checkbox-value"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="FastPlace-module" class="module">
+                    <div class="module-header"><span class="module-title">FastPlace</span><span
+                            class="module-expand">v</span></div>
+                    <div class="module-settings-wrapper">
+                        <div class="module-settings">
+                            <div class="setting slider-setting" id="PLACE_DELAY"><input type="range" class="display-slider"
+                                    min="1" max="4" step="1" value="1" disabled=""><input type="range" class="real-slider"
+                                    min="1" max="4" step="1" value="1">
+                                <div class="slider-value-holder"><span class="setting-title">Place Delay</span><span
+                                        class="slider-value">1</span></div>
+                            </div>
+                            <div id="BLOCKS_ONLY" class="setting checkbox-setting"><span class="setting-title">Blocks
+                                    Only</span>
+                                <div class="checkbox-value"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="Notifier-module" class="module">
+                    <div class="module-header"><span class="module-title">Notifier</span></div>
+                    <div class="module-settings-wrapper"></div>
+                </div>
+                <div id="Killsults-module" class="module">
+                    <div class="module-header"><span class="module-title">Killsults</span><span
+                            class="module-expand">v</span></div>
+                    <div class="module-settings-wrapper">
+                        <div class="module-settings">
+                            <div id="KS_RANDOM" class="setting checkbox-setting"><span class="setting-title">Random
+                                    Order</span>
+                                <div class="checkbox-value"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="Spammer-module" class="module">
+                    <div class="module-header"><span class="module-title">Spammer</span><span class="module-expand">v</span>
+                    </div>
+                    <div class="module-settings-wrapper">
+                        <div class="module-settings">
+                            <div class="setting textbox-setting" id="SPAMMER_TEXT"><span
+                                    class="setting-title">Text</span><input type="text" class="clickgui-textbox"
+                                    placeholder="Buy novoline"></div>
+                            <div class="setting slider-setting" id="SPAMMER_DELAY"><input type="range"
+                                    class="display-slider" min="100" max="6000" step="100" value="100" disabled=""><input
+                                    type="range" class="real-slider" min="100" max="6000" step="100" value="100">
+                                <div class="slider-value-holder"><span class="setting-title">Delay (in ms)</span><span
+                                        class="slider-value">100</span></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="ChatBypass-module" class="module">
+                    <div class="module-header"><span class="module-title">ChatBypass</span></div>
+                    <div class="module-settings-wrapper"></div>
+                </div>
+                <div id="Streamer-module" class="module">
+                    <div class="module-header"><span class="module-title">Streamer</span><span
+                            class="module-expand">v</span></div>
+                    <div class="module-settings-wrapper">
+                        <div class="module-settings">
+                            <div id="LOCALSCRAMBLE" class="setting checkbox-setting"><span class="setting-title">Change your
+                                    name</span>
+                                <div class="checkbox-value"></div>
+                            </div>
+                            <div class="setting textbox-setting setting-disabled" id="LOCAL"><span
+                                    class="setting-title">Local name</span><input type="text" class="clickgui-textbox"
+                                    placeholder="gast"></div>
+                            <div id="SCRAMBLEENEMIES" class="setting checkbox-setting"><span class="setting-title">Hide
+                                    others</span>
+                                <div class="checkbox-value"></div>
+                            </div>
+                            <div id="HIDEGAMEID" class="setting checkbox-setting"><span class="setting-title">Hide server
+                                    ID</span>
+                                <div class="checkbox-value"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="LightningTracker-module" class="module">
+                    <div class="module-header"><span class="module-title">LightningTracker</span><span
+                            class="module-expand">v</span></div>
+                    <div class="module-settings-wrapper">
+                        <div class="module-settings">
+                            <div id="LT_AUTO_WP" class="setting checkbox-setting"><span class="setting-title">Auto
+                                    waypoint</span>
+                                <div class="checkbox-value"></div>
+                            </div>
+                            <div class="setting slider-setting setting-disabled" id="LT_DELAY"><input type="range"
+                                    class="display-slider" min="3000" max="15000" step="500" value="3000" disabled=""><input
+                                    type="range" class="real-slider" min="3000" max="15000" step="500" value="3000">
+                                <div class="slider-value-holder"><span class="setting-title">Delay</span><span
+                                        class="slider-value">3000</span></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        history.scrollRestoration = 'manual';
+
+        $.get("/announcement")
+            .done((data) => {
+                $(".announcement-contents").html(data.replaceAll("\n", "<br>"));
+                $("#announcement-wrapper").fadeIn(250);
+
+                $("body").css("overflow", "hidden");
+                $("#close-announcement").click(() => {
+                    $("body").css("overflow", "auto");
+                    $("#announcement-wrapper").fadeOut(250)
+                });
+            });
+    </script>
+    <script>
+        $(document).ready(function () {
+            rollVideo();
+        });
+
+        function rollVideo() {
+            var videos = ["2Cmizy7aQyU", "aBRzneMmvVg", "DcJzS0qEE5g", "680tlnUxSn8?start=10"];
+            var videoId = videos[Math.floor(Math.random() * videos.length)];
+            videoId = videoId.includes("?") ? videoId + "&" : videoId + "?";
+            var videoLink = "https://www.youtube-nocookie.com/embed/" + videoId + "controls=0&showinfo=0&rel=0&autoplay=1&loop=1&mute=1";
+            var iframe = document.getElementById("video-iframe");
+            iframe.src = videoLink;
+        }
+    </script>
+    <script>
+        let wrapper, modal, timer, purchaseModalActive = false;
+
+        var PaymentsUI = {
+            currentTab: "purchase-home",
+            switchTab: function (tab) {
+                $(`#${this.currentTab}`).fadeOut(150, function (e) {
+                    $(`#${tab}`).fadeIn(150);
+                });
+                this.currentTab = tab;
+            }
+        };
+
+        $(document).ready(function () {
+            wrapper = $("#purchase-modal-wrapper");
+            modal = $("#purchase-modal");
+            timer = $("#timer");
+
+            $("#buy").click(function (e) {
+                wrapper.fadeIn(450);
+                modal.show("slow");
+                purchaseModalActive = true;
+                return false;
+            });
+
+            $(document).click(function (e) {
+                if (e.target == wrapper[0] && purchaseModalActive) {
+                    modal.hide("slow");
+                    wrapper.fadeOut(450);
+                    PaymentsUI.switchTab("purchase-home");
+                }
+            });
+
+            $('#scroll-to-content').click(function (e) {
+                e.preventDefault();
+
+                $("html, body").animate({
+                    scrollTop: $(".clickgui-header").offset().top
+                }, 'slow');
+            });
+
+            $("#login").click(function () {
+                window.location = "/panel";
+            });
+
+            $("#buy-with-crypto").click(() => {
+                window.open("https://commerce.coinbase.com/checkout/97615428-88f7-48f3-8084-b4ed2ee8b687");
+            });
+        });
+    </script>
+</body>
+<h5 class="titleEnd">
+    Totally not skidded. All rights to Novoline Client
+</h5>
+</html>

@@ -1,0 +1,100 @@
+.clickgui {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    font-family: sans-serif;
+    transition:.5s ease-in-out
+}
+
+.titleEnd {
+    position: absolute;
+    width: 100%;
+    padding-top: 7cm;
+    text-align: center;
+    height: 10px;
+}
+
+:root {
+    --clickgui-accent-color: #d57870;
+    --clickgui-module-color: #282828;
+    --clickgui-darker-color: #1d1d1d;
+    --clickgui-setting-background: #202020;
+    --combobox-unchecked-color: #737373;
+}
+
+:root {
+    --main-color-darker: #292929;
+    --pastel-blue: #7ca4d9;
+    --pastel-green: #7fc99a;
+    --pastel-orange: #fa927a;
+    --pastel-yellow: #ffc087;
+    --pastel-red: #ff7171;
+    --gray: #bfbfbf;
+}
+
+:not(svg, path),
+p {
+    color: #fff;
+    font-family: sf ui, sans-serif;
+}
+
+:root {
+    --clickgui-accent-color: #d57870;
+    --clickgui-module-color: #282828;
+    --clickgui-darker-color: #1d1d1d;
+    --clickgui-setting-background: #202020;
+    --combobox-unchecked-color: #737373;
+}
+
+:root{
+    --main-color-darker: #292929;
+    --pastel-blue: #7ca4d9;
+    --pastel-green: #7fc99a;
+    --pastel-orange: #fa927a;
+    --pastel-yellow: #ffc087;
+    --pastel-red: #ff7171;
+    --gray: #bfbfbf;
+}
+
+:not(svg, path),
+p {
+    color: #fff;
+    font-family: sf ui, sans-serif;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #3b3b3b;
+    height: 100%;
+}
+
+:root {
+    --clickgui-accent-color: #d57870;
+    --clickgui-module-color: #282828;
+    --clickgui-darker-color: #1d1d1d;
+    --clickgui-setting-background: #202020;
+    --combobox-unchecked-color: #737373;
+    font-family: sans-serif;
+}
+
+:root {
+    --main-color-darker: #292929;
+    --pastel-blue: #7ca4d9;
+    --pastel-green: #7fc99a;
+    --pastel-orange: #fa927a;
+    --pastel-yellow: #ffc087;
+    --pastel-red: #ff7171;
+    --gray: #bfbfbf;
+}
+
+.html {
+    max-zoom: 100;
+    min-zoom: 100;
+}
+
